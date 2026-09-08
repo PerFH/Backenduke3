@@ -46,7 +46,6 @@ Dere står fritt til å lage en annen løsning enn en kalkulator, så lenge dere
 
 Lykke til – og tenk gjerne på hvordan dere kan utvide programmet utover det mest grunnleggende!
 
-
 # Programflow
 1. hvilken regnemetode ønsker bruker å bruke
 2. bruker velger utifra liste
@@ -60,6 +59,7 @@ Lykke til – og tenk gjerne på hvordan dere kan utvide programmet utover det m
     - hele strengen i en liste, samt en if blokk, if multiplikasjon løs det først, ta bort faktorene og operator, putt ny verdi inn i listen, kjør om igjen til listen ikke inneholder spesialtegn(evt lage liste med aksepterte tegn)
 
 # Pseudokode
+```csharp
 Class Program:
  Console.Writeline("Mathbot activated, select mode(1,2,3):\n" + 
                     "1. Two factor math.\n" +
@@ -74,15 +74,17 @@ int selection;
 {
     Console.WriteLine("Please enter a valid number:");
 }
-switch (selection)
+switch (selection){
     case 1: twoInputMath.getNumberA()
             twoInputMath.getNumberB()
             twoInputMath.calculateTwo()
-    case 2: expressionMath.getString()
+    case 2: expressionMath.getExpression()
     case 3: break;
 }
+}
 
- Public class twoInputMath
+public class twoInputMath()
+{
     public decimal inputA {get; set;}
 
     public decimal getNumberA()
@@ -113,12 +115,35 @@ switch (selection)
             case divide: operator = /
             default: writeline: ("that is not a valid operator") getOperator()
     }
-
-    public void CalculateTwo()
+    public void CalculateTwo(){
     switch (operator)
     case +: decimal result = (inputA + inputB)
     Console.Writeline {inputA}+{inputB}=Result
     ...
     ...
     ...
-    
+    }
+}    
+public class expressionMath()
+{
+    public List<string> mathExpression
+    public void getExpression()
+    {
+        input = console.ReadLine()
+        foreach char symbol in input
+        mathExpression.Add
+    }
+    public void formatList()
+    {
+        for (int i = 0; i < mathExpression.Count; i++)
+            if char.IsWhiteSpace(mathExpression[i])
+                mathExpression.RemoveAt(i)
+                i--
+    }
+    public void mathIsMathing
+    {
+        for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, kjør om igjen til liste plass 2 ikke eksisterer
+    }
+}
+
+```    
