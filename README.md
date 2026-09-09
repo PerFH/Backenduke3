@@ -61,14 +61,14 @@ Lykke til – og tenk gjerne på hvordan dere kan utvide programmet utover det m
 # Pseudokode
 ```csharp
 Class Program:
+{
  Console.Writeline("Mathbot activated, select mode(1,2,3):\n" + 
                     "1. Two factor math.\n" +
                     "2. Expression math.\n" +
                     "3. Quit.")
 Selection()
 
-public class Selection()
-{
+public void Selection()
 int selection;
  while (!int.TryParse(Console.ReadLine)out selection)
 {
