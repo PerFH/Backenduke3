@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq.Expressions;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Backenduke3;
@@ -147,30 +148,52 @@ public class twoInputMath()
 
 public class expressionMath()
 {
+
     string input;
-    public List<string> mathExpression = new();
+    public List<char> mathExpression = new();
     public void getExpression()
     {
         Console.WriteLine();
         input = Console.ReadLine();
         foreach (char symbol in input)
         {
-        mathExpression.Add(input);
+        mathExpression.Add(symbol);
         Console.WriteLine(symbol);
         }
+        formatList();
     }
-
-/*
     public void formatList()
     {
+        Console.WriteLine("Formatted:");
+        char[] validCharacters =
+        {
+            '0', '1', '2', '3', '4',
+            '5', '6', '7', '8', '9',
+            '+', '-', '*', '/'};
         for (int i = 0; i < mathExpression.Count; i++)
-            if char.IsWhiteSpace(mathExpression[i])
-                    mathExpression.RemoveAt(i)
-                    i--
+        {
+            bool valid = false;
+            foreach (char validChar in validCharacters)
+            {
+                if (mathExpression[i] == validChar)
+                {
+                    valid = true;
+                    break;
+                }
+            }
+            if (!valid)
+            {
+                mathExpression.RemoveAt(i);
+                if (i > 0) i--;
+            }
         }
-    public void mathIsMathing
-    {
-        for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, kjør om igjen til liste plass 2 ikke eksisterer
+            Console.WriteLine(string.Join("", mathExpression));
     }
-*/
+
+ 
+    public void mathIsMathing()
+    {
+        //for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, kjør om igjen til liste plass 2 ikke eksisterer
+    }
+
 }
