@@ -5,6 +5,7 @@ namespace Backenduke3;
 
 class Program
 {
+    public static expressionMath expMath = new expressionMath();
     public static twoInputMath calc = new twoInputMath();
     static void Main(string[] args)
     {
@@ -26,19 +27,19 @@ class Program
         switch (chosenOption)
         {
             case 1:
-            {
-                calc.getNumberA();
-                calc.getNumberB();
-                calc.getOperator();
-                calc.CalculateTwo();
-                break;
-            }
+                {
+                    calc.getNumberA();
+                    calc.getNumberB();
+                    calc.getOperator();
+                    calc.CalculateTwo();
+                    break;
+                }
             case 2:
                 {
-                Console.WriteLine("Future feature");
-                //expressionMath.getExpression();
-                break;
-                } 
+                    Console.WriteLine("Future feature");
+                    expMath.getExpression();
+                    break;
+                }
 
             case 3: break;
         }
@@ -75,96 +76,101 @@ public class twoInputMath()
         Console.WriteLine(inputB);
         return inputB;
     }
-   
+
     public void getOperator()
     {
         Console.WriteLine("Select which operation you want to do, 'add', 'subtract', 'multiply' or 'divide'");
         operatorInput = Console.ReadLine();
         switch (operatorInput)
-        {   
-            case "add": 
-            {    
-                chosenOperator = '+';
-                Console.WriteLine(chosenOperator);
+        {
+            case "add":
+                {
+                    chosenOperator = '+';
+                    Console.WriteLine(chosenOperator);
+                    break;
+                }
+            case "subtract":
+                {
+                    chosenOperator = '-';
+                    Console.WriteLine(chosenOperator);
+                    break;
+                }
+            case "multiply":
+                {
+                    chosenOperator = '*';
+                    Console.WriteLine(chosenOperator);
+                    break;
+                }
+            case "divide":
+                {
+                    chosenOperator = '/';
+                    Console.WriteLine(chosenOperator);
+                    break;
+                }
+            default:
+                Console.WriteLine("That is not a valid operator, 'add', 'subtract', 'multiply' or 'divide'!");
+                getOperator();
                 break;
-            }
-            case "subtract": 
-            {
-                chosenOperator = '-';
-                Console.WriteLine(chosenOperator);
-                break;
-            }
-            case "multiply": 
-            {
-                chosenOperator = '*';
-                Console.WriteLine(chosenOperator);
-                break;
-            }
-            case "divide": 
-            {
-                chosenOperator = '/';
-                Console.WriteLine(chosenOperator);
-                break;    
-            }
-            default: Console.WriteLine("That is not a valid operator, 'add', 'subtract', 'multiply' or 'divide'!"); 
-            getOperator();
-            break;
         }
     }
     public void CalculateTwo()
     {
         switch (chosenOperator)
         {
-        case '+':
-            {
-                result = inputA + inputB;
-                Console.WriteLine($"{inputA}+{inputB}={result}");
-                break;  
-            }
-        case '-':
-            {
-                result = inputA - inputB;
-                Console.WriteLine($"{inputA}-{inputB}={result}");
-                break;  
-            }
-        case '*':
-            {
-                result = inputA * inputB;
-                Console.WriteLine($"{inputA}*{inputB}={result}");
-                break;  
-            }
-        case '/':                
-            {
-                result = inputA / inputB;
-                Console.WriteLine($"{inputA}/{inputB}={result}");
-                break;  
-            }
+            case '+':
+                {
+                    result = inputA + inputB;
+                    Console.WriteLine($"{inputA}+{inputB}={result}");
+                    break;
+                }
+            case '-':
+                {
+                    result = inputA - inputB;
+                    Console.WriteLine($"{inputA}-{inputB}={result}");
+                    break;
+                }
+            case '*':
+                {
+                    result = inputA * inputB;
+                    Console.WriteLine($"{inputA}*{inputB}={result}");
+                    break;
+                }
+            case '/':
+                {
+                    result = inputA / inputB;
+                    Console.WriteLine($"{inputA}/{inputB}={result}");
+                    break;
+                }
         }
     }
 }
 
-
+public class expressionMath()
+{
+    string input;
+    public List<string> mathExpression = new();
+    public void getExpression()
+    {
+        Console.WriteLine();
+        input = Console.ReadLine();
+        foreach (char symbol in input)
+        {
+        mathExpression.Add(input);
+        Console.WriteLine(symbol);
+        }
+    }
 
 /*
-    public class expressionMath()
+    public void formatList()
     {
-        public List<string> mathExpression
-        public void getExpression()
-        {
-            input = console.ReadLine()
-        foreach char symbol in input
-        mathExpression.Add
-    }
-        public void formatList()
-        {
-            for (int i = 0; i < mathExpression.Count; i++)
-                if char.IsWhiteSpace(mathExpression[i])
+        for (int i = 0; i < mathExpression.Count; i++)
+            if char.IsWhiteSpace(mathExpression[i])
                     mathExpression.RemoveAt(i)
                     i--
         }
-        public void mathIsMathing
-        {
+    public void mathIsMathing
+    {
         for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, kjør om igjen til liste plass 2 ikke eksisterer
-        }
     }
 */
+}
