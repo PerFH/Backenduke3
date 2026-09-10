@@ -29,10 +29,10 @@ class Program
         {
             case 1:
                 {
-                    calc.getNumberA();
-                    calc.getNumberB();
+                    decimal inputA = calc.getNumberA();
+                    decimal inputB = calc.getNumberB();
                     calc.getOperator();
-                    calc.CalculateTwo();
+                    calc.CalculateTwo(inputA, inputB);
                     break;
                 }
             case 2:
@@ -114,7 +114,7 @@ public class twoInputMath()
                 break;
         }
     }
-    public void CalculateTwo()
+    public void CalculateTwo(decimal inputA, decimal inputB)
     {
         switch (chosenOperator)
         {
@@ -165,7 +165,7 @@ public class expressionMath()
     public void formatList()
     {
         Console.WriteLine("Formatted:");
-        char[] validCharacters = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.' };
+        char[] validCharacters = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '^', '(', ')'};
         for (int i = 0; i < mathExpression.Count; i++)
         {
             bool valid = false;
