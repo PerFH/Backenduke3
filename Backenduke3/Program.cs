@@ -30,7 +30,7 @@ class Program
                 calc.getNumberA();
                 calc.getNumberB();
                 calc.getOperator();
-                calc.CalculateTwo(calc.getNumberA, calc.getNumberB, calc.getOperator);
+                calc.CalculateTwo();
                 break;
             }
             case 2:
@@ -49,10 +49,11 @@ class Program
 
 public class twoInputMath()
 {
-    static char chosenOperator;
+    string? operatorInput;
+    char chosenOperator;
     decimal inputA;
     decimal inputB;
-    char 
+    decimal? result;
     public decimal getNumberA()
     {
         Console.WriteLine("Input first number:");
@@ -78,11 +79,8 @@ public class twoInputMath()
     public void getOperator()
     {
         Console.WriteLine("Select which operation you want to do, 'add', 'subtract', 'multiply' or 'divide'");
-        while (!char.TryParse(Console.ReadLine(), out chosenOperator))
-        {
-            Console.WriteLine("Please enter a valid number:");
-        }
-        switch (chosenOperator)
+        operatorInput = Console.ReadLine();
+        switch (operatorInput)
         {   
             case "add": 
             {    
@@ -113,31 +111,31 @@ public class twoInputMath()
             break;
         }
     }
-    public void CalculateTwo(decimal inputA, decimal inputB, char chosenOperator)
+    public void CalculateTwo()
     {
         switch (chosenOperator)
         {
         case '+':
             {
-                decimal result = inputA + inputB;
+                result = inputA + inputB;
                 Console.WriteLine($"{inputA}+{inputB}={result}");
                 break;  
             }
         case '-':
             {
-                decimal result = inputA - inputB;
+                result = inputA - inputB;
                 Console.WriteLine($"{inputA}-{inputB}={result}");
                 break;  
             }
         case '*':
             {
-                decimal result = inputA * inputB;
+                result = inputA * inputB;
                 Console.WriteLine($"{inputA}*{inputB}={result}");
                 break;  
             }
         case '/':                
             {
-                decimal result = inputA / inputB;
+                result = inputA / inputB;
                 Console.WriteLine($"{inputA}/{inputB}={result}");
                 break;  
             }
