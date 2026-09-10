@@ -157,19 +157,15 @@ public class expressionMath()
         input = Console.ReadLine();
         foreach (char symbol in input)
         {
-        mathExpression.Add(symbol);
-        Console.WriteLine(symbol);
+            mathExpression.Add(symbol);
+            Console.WriteLine(symbol);
         }
         formatList();
     }
     public void formatList()
     {
         Console.WriteLine("Formatted:");
-        char[] validCharacters =
-        {
-            '0', '1', '2', '3', '4',
-            '5', '6', '7', '8', '9',
-            '+', '-', '*', '/'};
+        char[] validCharacters = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.' };
         for (int i = 0; i < mathExpression.Count; i++)
         {
             bool valid = false;
@@ -187,13 +183,28 @@ public class expressionMath()
                 if (i > 0) i--;
             }
         }
-            Console.WriteLine(string.Join("", mathExpression));
+        Console.WriteLine(string.Join("", mathExpression));
     }
 
- 
+
     public void mathIsMathing()
     {
-        //for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, kjør om igjen til liste plass 2 ikke eksisterer
+        char[] separators = { '+', '-', '*', '/' };
+        for (int i = 0; i < mathExpression.Count; i++)
+        {
+            foreach (char separator in separators)
+            {
+                if (mathExpression[i] == separator)
+                {
+                    for (int j = i; j < mathExpression.Count; j++) {}
+                    
+                    for (int j = i; j < 0; j--) {}
+                }
+            }
+        }
+        //for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, 
+        // kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, 
+        // kjør om igjen til liste plass 2 ikke eksisterer
     }
 
 }
