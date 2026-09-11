@@ -153,12 +153,10 @@ public class expressionMath()
     public List<char> mathExpression = new();
     public void getExpression()
     {
-        Console.WriteLine();
         input = Console.ReadLine();
         foreach (char symbol in input)
         {
             mathExpression.Add(symbol);
-            Console.WriteLine(symbol);
         }
         formatList();
     }
@@ -185,26 +183,4 @@ public class expressionMath()
         }
         Console.WriteLine(string.Join("", mathExpression));
     }
-
-
-    public void mathIsMathing()
-    {
-        char[] separators = { '+', '-', '*', '/' };
-        for (int i = 0; i < mathExpression.Count; i++)
-        {
-            foreach (char separator in separators)
-            {
-                if (mathExpression[i] == separator)
-                {
-                    for (int j = i; j < mathExpression.Count; j++) {}
-                    
-                    for (int j = i; j < 0; j--) {}
-                }
-            }
-        }
-        //for loop, finn tegn i lista, ta det som er før og etter, gjør dette om til inputA+B samt operator, 
-        // kall på funksjoner, og oppdater tegnet med resultatet og fjern de 2 faktorene, 
-        // kjør om igjen til liste plass 2 ikke eksisterer
-    }
-
 }
